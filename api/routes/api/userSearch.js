@@ -1,7 +1,13 @@
 var express = require('express')
-var router = express.router
-router.get('/', () => {
+var router = express.Router()
+var users = require('../../app/userFunc')
+
+
+router.get('/', (eq, res, next) => {
     console.log(`testing ... `)
+    const result = users.search('joshua')
+
+    res.send({ result })
 })
 
-module.exports = router;    
+module.exports = router
