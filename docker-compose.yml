@@ -2,7 +2,7 @@ version: "2"
 services:
     client:
         build: ./client
-        image: foodlogger_client
+        image: user_search_client
         restart: always
         ports:
             - "3000:3000"
@@ -15,7 +15,7 @@ services:
             - webappnetwork
     api:
         build: ./api
-        image: foodlogger_api_1
+        image: user_search_api_1
         restart: always
         ports:
             - "9000:9000"
