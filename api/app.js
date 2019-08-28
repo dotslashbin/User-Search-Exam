@@ -8,8 +8,18 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 var testAPIRouter = require('./routes/testAPI')
 var userSearch = require('./routes/api/userSearch')
+var mongoose = require('mongoose')
 
 var app = express()
+
+mongoose.connect('mongodb://admin:pass1234@172.23.0.2:27017/admin', {useNewUrlParser: true})
+  .then(() => {
+    console.log(`DATABASE CONNECTED ...`)
+  })
+  .catch((error) => {
+    console.error(`DATABASE CONNECTION ERROR: `, error)
+  })
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))

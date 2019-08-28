@@ -34,9 +34,11 @@ services:
             - ./data_node:/data/db
         ports:
             - 27017:27017
-        command: 'mongod --noauth'
         networks:
             - webappnetwork
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: pass1234
 networks:
     webappnetwork:
         driver: bridge
