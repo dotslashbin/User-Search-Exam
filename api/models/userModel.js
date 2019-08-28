@@ -3,11 +3,11 @@ const Schema = mongoose.Schema
 
 const UserModel = new Schema({
     name: {
-        type: string,
+        type: String,
         required: true
     },
     email: {
-        type:string
+        type: String
     }
 })
 

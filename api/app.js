@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users')
 var testAPIRouter = require('./routes/testAPI')
 var userSearch = require('./routes/api/userSearch')
 var mongoose = require('mongoose')
+var seeder = require('./app/seeder')
 
 var app = express()
 
@@ -20,6 +21,7 @@ mongoose.connect('mongodb://admin:pass1234@172.23.0.2:27017/admin', {useNewUrlPa
     console.error(`DATABASE CONNECTION ERROR: `, error)
   })
 
+seeder.createUsers();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
